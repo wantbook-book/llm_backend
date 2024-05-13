@@ -1,0 +1,12 @@
+{
+    "CUDA_VISIBLE_DEVICES": "5,6,7",
+    "models":{
+        "llama3_8b": "/home/jovyan/notebook/LLAMA-3-8B",
+        "llama2_13b": "/home/jovyan/notebook/LLAMA_13B",
+        "llama3_70b": "/pubshare/LLM/Meta-Llama-3-70B-Instruct",
+        "llama2_13b_v3": "/home/jovyan/notebook/MineLLaMa-v3",
+        "llama2_13b_v4": "/home/jovyan/notebook/MineLLaMa-v4",
+        "llama2_70b": "/pubshare/LLM/Llama-2-70b-chat-hf"
+    },
+    "port": 9999
+}
