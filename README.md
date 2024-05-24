@@ -18,7 +18,14 @@ In `conf/config.json`:
 
 - `models`: Key-Value. The key will be used as the api name and the corresponding value is the model directory to be loaded
 
-  The backend supports two models now: LLama2 and LLama3. Key need to be named starting with “llama2” in case of LLaMa2 and "llama3" in case of LLaMa3.
+  The backend supports two models now: LLama2 and LLama3. Key need to be named starting with “llama2” in case of LLaMa2 and "llama3" in case of LLaMa3. For example:
+
+  ```json
+  "models":{
+    "llama2_xxxx": "/path/to/your/llama2_xxxx.weights",
+    "llama3_xxxx": "/path/to/your/llama3_xxxx.weights"
+  }
+  ```
 
 - `port`: It's the port where the backend will run on your computer.
 
