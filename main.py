@@ -2,18 +2,23 @@
 
 
 from api.api import create_app
-from model.llama import Llama
+from model.llama import Llama2, Llama3
 import uvicorn
 import os
 from conf import config_manager
 os.environ["CUDA_VISIBLE_DEVICES"] = config_manager.get('CUDA_VISIBLE_DEVICES') #指定cuda可见显卡编号
 if __name__ == "__main__":
     models_path = config_manager.get('models')
-
-    models = {
-        name: Llama(model_path=models_path[name], device_map="auto")
-        for name in models_path
-    }
+    models = {}
+    for name in models_path:
+        if name.startswith('llama3'):
+            models[name] = Llama3(model_path=models_path[name], device_map="auto")
+        elif name.startswith('llama2'):
+            models[name] = Llama2(model_path=models_path[name], device_map="auto")
+    # models = {
+    #     name: Llama(model_path=models_path[name], device_map="auto")
+    #     for name in models_path
+    # }
     # os.environ["CUDA_VISIBLE_DEVICES"] = "0" #指定cuda可见显卡编号
     # models['v1'] = Llama(model_path="/home/jovyan/notebook/MineLLaMa", device_map={"":5})
     # models['llama3_8b'] = Llama(model_path="/home/jovyan/notebook/LLAMA-3-8B", device_map="auto")
