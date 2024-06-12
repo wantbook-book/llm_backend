@@ -108,6 +108,7 @@ class Llama3:
             do_sample=self.do_sample,
             temperature=self.temperature,
             top_p=self.top_p,
+            # pad_token_id=self.tokenizer.eos_token_id,
             #repetition_penalty=1.3, 
         )
         if len(outputs) > 0:

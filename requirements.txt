@@ -4,3 +4,4 @@ torch
 transformers
 bitsandbytes
 accelerate
+asyncio
