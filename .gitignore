@@ -1,4 +1,5 @@
 venv/
+conf/config.json
 test/
 test_data/
 qa_examples/
